@@ -1,0 +1,23 @@
+---
+apiVersion: hdl.sap.com/v1alpha1
+kind: ClusterFileContainer
+metadata:
+  generation: 1
+  labels:
+    cf.hc.sap.com/global_account_id: bfbdc98c-3528-49ef-abe2-637aa130da5c
+    cf.hc.sap.com/subaccount_id: 97845e59-e1a4-49e3-8c0f-8ee45b39386c
+    cf.hc.sap.com/instance_guid: cfctdc2024
+  name: cfctdc2024
+spec:
+  trusts:
+  - alias: ca
+    certData: |-
+      <CA-cert>
+  authorizations:
+  - pattern: "^.*CN=AdminTDC2024,.*$"
+    roles:
+    - "admin"
+    rank: 1
+    requesterPays: false
+  allowedNetworks:
+  - "0.0.0.0/0"

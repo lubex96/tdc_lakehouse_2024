@@ -1,5 +1,5 @@
 import argparse
-from HdlfsClient import HdlfsClient
+from src.HdlfsClient import HdlfsClient
 
 def fail(message, response):
     print(f"[ERROR] {message}")
