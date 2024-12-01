@@ -295,3 +295,46 @@ python3 scripts/generate-delta-sharing-profile.py \
     --authorizedShares <my-share-name> \
     --outputFilePath <delta-sharing-profile-output-path>
 ```
+
+## Consuming data using Delta Sharing
+
+In possession of a Delta Sharing profile, you can use the any Delta Sharing client to consume the data that was shared with you.
+Here, we are going to use the [Python Delta Sharing client](https://github.com/delta-io/delta-sharing?tab=readme-ov-file#python-connector).
+
+Start by instantiating the client and pointing to the profile file:
+
+```python
+import delta_sharing
+
+profileFile = "/path/to/delta-sharing-profile.json"
+client = delta_sharing.SharingClient(profileFile)
+```
+
+You can list all shares and tables that were shared with you:
+
+```python
+allShares = client.list_shares()
+allTables = client.list_all_tables()
+
+print(allShares)
+print(allTables)
+```
+
+And load one of the tables as a Pandas DataFrame:
+
+```python
+aTable = allTables[0]
+
+df = delta_sharing.load_as_pandas(f"{profileFile}#{aTable.share}.{aTable.schema}.{aTable.name}")
+print(df)
+```
+
+From now, you can query, show, transform, plot the DataFrame as any other regular Pandas DataFrame.
+See an example of how to plot the data using MatPlotLib:
+
+```python
+import matplotlib.pyplot as plt
+
+df.plot()
+plt.show()
+```
