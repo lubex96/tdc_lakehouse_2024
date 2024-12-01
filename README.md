@@ -108,20 +108,20 @@ To verify the installation:
 pyspark --version
 ```
 
-#### Delta Sharing
+#### Install other Python libraries
 
-To install the Python Delta Sharing client, run:
+Finally, we are going to install the following libraries:
+
+- Delta Sharing
+- Pandas
+- MatPlotLib
+- PyJWT
+- Cryptography
+
+To install, run:
 
 ```shell
-pip3 install delta-sharing
-```
-
-#### Pandas and Matplotlib
-
-Finally, let's install Pandas and Matplotlib:
-
-```shell
-pip3 install pandas matplotlib
+pip3 install delta-sharing pandas matplotlib pyjwt cryptography
 ```
 
 ## Running Spark
@@ -229,7 +229,7 @@ spark = SparkSession.builder \
     .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
     .config("spark.hadoop.fs.AbstractFileSystem.hdlfs.impl", "com.sap.hana.datalake.files.Hdlfs") \
     .config("spark.hadoop.fs.hdlfs.impl", "com.sap.hana.datalake.files.HdlfsFileSystem") \
-    .config("spark.hadoop.fs.defaultFS", "hdlfs://cfcselfsigned1.files.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com/") \
+    .config("spark.hadoop.fs.defaultFS", "<hdlfs-endpoint-url>") \
     .config("spark.hadoop.fs.hdlfs.ssl.certfile", "<path-to-certs>/client.crt") \
     .config("spark.hadoop.fs.hdlfs.ssl.keyfile", "<path-to-certs>/client.key") \
     .getOrCreate()
@@ -269,15 +269,13 @@ To share Delta tables stored in HDL Files, you need to:
 4. Provide your authorized recipeint with this JWT (through a secure channel).
 
 HDL Files offers a Catalog API that can be used to manage your shares and share tables.
-For simplicity, you can use the [share-delta-table.py script](./scripts/share-delta-table.py) to cover steps 1 and 2.
+For simplicity, you can use the script [share-delta-table.py](./scripts/share-delta-table.py) to cover steps 1 and 2.
 
 > NOTE: Choose a unique name for your share, to avoid conflict with other participants of the workshop.
 
-**TODO** Adjust the CFC URL.
-
-```python
+```shell
 python3 scripts/share-delta-table.py \
-    --hdlfEndpoint cfcselfsigned1.files.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com \
+    --hdlfEndpoint <hdlf-endpoint> \
     --clientCertPath <path-to-certs>/client.crt \
     --clientKeyPath <path-to-certs>/client.key \
     --shareName <my-unique-share-name> \
@@ -287,5 +285,13 @@ python3 scripts/share-delta-table.py \
 ```
 
 After the Share and Share table(s) are created, you can generate a JWT with enough permissions to access the data in the share.
+The script [generate-delta-sharing-profile.py](./scripts/generate-delta-sharing-profile.py) generates the HDLF JWT, authorizing the only the share(s) you want, and generates a Delta sharing profile file that can be shared with the recipient you want to provide access to.
 
-**TODO** JWT generation.
+```shell
+python3 scripts/generate-delta-sharing-profile.py \
+    --hdlfEndpoint <hdlf-endpoint> \
+    --clientCertPath <path-to-certs>/client.crt \
+    --clientKeyPath <path-to-certs>/client.key \
+    --authorizedShares <my-share-name> \
+    --outputFilePath <delta-sharing-profile-output-path>
+```
