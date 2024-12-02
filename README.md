@@ -117,11 +117,12 @@ Finally, we are going to install the following libraries:
 - MatPlotLib
 - PyJWT
 - Cryptography
+- seaborn
 
 To install, run:
 
 ```shell
-pip3 install delta-sharing pandas matplotlib pyjwt cryptography
+pip3 install delta-sharing pandas matplotlib pyjwt cryptography seaborn
 ```
 
 ## Running Spark
