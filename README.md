@@ -228,15 +228,13 @@ The authentication between your Spark application and your FileContainer is base
 An HDLF FileContainer was previously prepared for this workshop session.
 The URL to access it is the following:
 
-**TODO** Adjust the CFC URL.
-
 ```
-hdlfs://cfcselfsigned1.files.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com
+hdlfs://cfctest-i546111.sharing.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com
 ```
 
 You can obtain the certificates to authenticate against this FileContainer accessing the following link:
 
-**TODO** Link to download the certs.
+https://1drv.ms/f/c/f3946abff5ef9858/Eo5hThH3upNBqCWjgnZ_CwQBCOce5IBUNVz5UJ4M78-gag?e=yVi1ZI
 
 The Spark session should be configured as follows. Replace the `<path-to-certs>` placeholder with the path where you downloaded the certificates.
 
@@ -275,7 +273,7 @@ Latency tends to be high since FileContainer is deployed in a data center in Eur
 
 ### Transforming data using Spark
 
-**TODO** Instructions to process the COVID dataset and store the result in Delta table(s).
+Check [covid_exercise](./covid_dataset/covid_exercise.ipynb) Notebook.
 
 ## Sharing data using Delta Sharing
 
