@@ -1,5 +1,11 @@
 # Lakehouse in action
 
+Welcome to _Lakehouse in action_ ! The objective of this hands-on session is:
+
+- Showcase the lakehouse architecture with concrete examples;
+- Show how Spark can be used to manipulate and transform data;
+- Present Delta capabilities for enhancing data management in lakehouse environments. 
+
 ## Installing required softwares
 
 ### Java 17
@@ -64,9 +70,11 @@ pip3 --version
 
 - [Official Python download page](https://www.python.org/downloads/)
 
-### Python packages
+## Exercises
 
-#### Create a virtual environment
+After installing all the necessary dependencies, you are now ready to do the exercises.
+
+It's recommended that you clone this repository and execute the commands below from the root of the cloned repo folder. That way, you have access directly to the exercise Jupyter notebook. Otherwise, if you prefer using a different folder, simply copy the necessary resources/files from the repository and place them in your folder.
 
 Let's start by creating a virtual environment to isolate your project's dependencies from your global Python installation:
 
@@ -80,23 +88,13 @@ To activate the environment:
 source lakehouse-env/bin/activate
 ```
 
-#### Install Jupyter
-
-Now, let's install Jupyter Lab/Notebook:
+With the environemnt in place, let's install Jupyter Lab/Notebook:
 
 ```shell
 pip3 install jupyter
 ```
 
-Verify the installation by running the following command:
-
-```shell
-jupyter lab
-```
-
-#### Install PySpark 3.5.3
-
-To install PySpark, run:
+Next, install PySpark by running:
 
 ```shell
 pip3 install pyspark==3.5.3
@@ -125,19 +123,41 @@ To install, run:
 pip3 install delta-sharing pandas matplotlib pyjwt cryptography seaborn
 ```
 
-## Running Spark
-
-After installing all the necessary dependencies, you are now ready to run Spark.
-
-Let's start Jupyter Lab where you will be able to create and run Python Notebooks.
+Start Jupyter by running the following command:
 
 ```shell
 jupyter lab
 ```
+You should be redirected to the Jupyter UI. In the left side, you should see a file system explorer interface, as seen below:
 
-Create a new notebook by clicking on File > New > Notebook.
+ ![Jupyter File Explorer](./resources/img/jupyter_file_explorer.png):
 
-### Running a sample Spark app
+### Exercise #1 - COVID Dataset
+
+If you chose the cloned repo as the root folder, simply open the folder `covid_dataset` in the Jupyter file explorer, and click on `covid_exercise.ipynb`. Then, simply follow the instructions to complete the exercise.
+
+Otherwise, you should copy the file [covid_dataset/covid_exercise.ipynb](./covid_dataset/covid_exercise.ipynb) to your preferred folder and follow the exercise normally.
+
+In this exercise, we'll manipulate the COVID 19 dataset contained in a Data Lake to showcase how the lakehouse architecture, together with Spark and Delta, can be used to obtain insights from unstructured data. 
+
+### Exercise #2 - Movies Dataset
+
+If you chose the cloned repo as the root folder, simply open the folder `movies_dataset` in the Jupyter file explorer, and click on `movies_exercise.ipynb`. Then, simply follow the instructions to complete the exercise.
+
+Otherwise, you should copy the file [movies_dataset/movies_exercise.ipynb](./movies_dataset/movies_exercise.ipynb) to your preferred folder and follow the exercise normally.
+
+In this exercise, we'll manipulate a local dataset about movie ratings to highlight how Spark can be useful for data manipulation, and how we can get insights using data visualization libraries in Python.
+
+You can download the two files representing our dataset with the following link:
+
+- [movies.csv](https://1drv.ms/x/c/f3946abff5ef9858/EXbV9hxa7nNHqCy1tjTNKIcBOlsB3UddA5Ru-AEj1HbuNA?e=yEtQmA): CSV file with movie information.
+- [ratings.csv](https://1drv.ms/x/c/f3946abff5ef9858/EcVdyGaO1DpFrsCmofhhlIgB-UaOLxGqqQU2fIJ2d_yowQ?e=frJpLC): CSV file containing ratings about movies, from 1995 to 2015.
+
+Download these files and place them in `movies_dataset/`, or in the same folder where `movies_exercise.ipynb` is located. 
+
+## Extra: Spark and Delta crash course
+
+If you finished your exercise, you can check this section for understanding the integration beteween Delta and Spark.
 
 To use PySpark on your notebook, first of all you need to create a Spark Session.
 
