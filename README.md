@@ -229,7 +229,7 @@ An HDLF FileContainer was previously prepared for this workshop session.
 The URL to access it is the following:
 
 ```
-hdlfs://cfctest-i546111.sharing.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com
+hdlfs://cfctest-i546111.files.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com
 ```
 
 You can obtain the certificates to authenticate against this FileContainer accessing the following link:
