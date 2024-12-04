@@ -134,17 +134,15 @@ You should be redirected to the Jupyter UI. In the left side, you should see a f
 
 ### Exercise #1 - COVID Dataset
 
+In this exercise, we'll manipulate the COVID 19 dataset contained in a Data Lake to showcase how the lakehouse architecture, together with Spark and Delta, can be used to obtain insights from unstructured data.
+
+Please download the `client.crt` and `client.key` files from [this link](https://1drv.ms/f/c/f3946abff5ef9858/Eo5hThH3upNBqCWjgnZ_CwQBCOce5IBUNVz5UJ4M78-gag?e=f06vq7). They will be required for autheticating against the Data Lake service.
+
 If you chose the cloned repo as the root folder, simply open the folder `covid_dataset` in the Jupyter file explorer, and click on `covid_exercise.ipynb`. Then, simply follow the instructions to complete the exercise.
 
 Otherwise, you should copy the file [covid_dataset/covid_exercise.ipynb](./covid_dataset/covid_exercise.ipynb) to your preferred folder and follow the exercise normally.
 
-In this exercise, we'll manipulate the COVID 19 dataset contained in a Data Lake to showcase how the lakehouse architecture, together with Spark and Delta, can be used to obtain insights from unstructured data. 
-
 ### Exercise #2 - Movies Dataset
-
-If you chose the cloned repo as the root folder, simply open the folder `movies_dataset` in the Jupyter file explorer, and click on `movies_exercise.ipynb`. Then, simply follow the instructions to complete the exercise.
-
-Otherwise, you should copy the file [movies_dataset/movies_exercise.ipynb](./movies_dataset/movies_exercise.ipynb) to your preferred folder and follow the exercise normally.
 
 In this exercise, we'll manipulate a local dataset about movie ratings to highlight how Spark can be useful for data manipulation, and how we can get insights using data visualization libraries in Python.
 
@@ -154,6 +152,10 @@ You can obtain the two files representing our dataset with [this link](https://1
 - `rating.csv`: CSV file containing ratings about movies, from 1995 to 2015.
 
 Download these files and place them in `movies_dataset/`, or in the same folder where `movies_exercise.ipynb` is located. 
+
+If you chose the cloned repo as the root folder, simply open the folder `movies_dataset` in the Jupyter file explorer, and click on `movies_exercise.ipynb`. Then, simply follow the instructions to complete the exercise.
+
+Otherwise, you should copy the file [movies_dataset/movies_exercise.ipynb](./movies_dataset/movies_exercise.ipynb) to your preferred folder and follow the exercise normally.
 
 ## Extra: Spark and Delta crash course
 
