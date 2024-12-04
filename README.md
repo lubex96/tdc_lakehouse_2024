@@ -148,10 +148,10 @@ Otherwise, you should copy the file [movies_dataset/movies_exercise.ipynb](./mov
 
 In this exercise, we'll manipulate a local dataset about movie ratings to highlight how Spark can be useful for data manipulation, and how we can get insights using data visualization libraries in Python.
 
-You can download the two files representing our dataset with the following link:
+You can obtain the two files representing our dataset with [this link](https://1drv.ms/f/c/f3946abff5ef9858/Eo5hThH3upNBqCWjgnZ_CwQBCOce5IBUNVz5UJ4M78-gag?e=f06vq7). Download the following files:
 
-- [movies.csv](https://1drv.ms/x/c/f3946abff5ef9858/EXbV9hxa7nNHqCy1tjTNKIcBOlsB3UddA5Ru-AEj1HbuNA?e=yEtQmA): CSV file with movie information.
-- [ratings.csv](https://1drv.ms/x/c/f3946abff5ef9858/EcVdyGaO1DpFrsCmofhhlIgB-UaOLxGqqQU2fIJ2d_yowQ?e=frJpLC): CSV file containing ratings about movies, from 1995 to 2015.
+- `movie.csv`: CSV file with movie information.
+- `rating.csv`: CSV file containing ratings about movies, from 1995 to 2015.
 
 Download these files and place them in `movies_dataset/`, or in the same folder where `movies_exercise.ipynb` is located. 
 
